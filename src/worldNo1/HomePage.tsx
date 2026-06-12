@@ -16,7 +16,7 @@ import Chatbot from './components/Chatbot';
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen w-full overflow-x-clip bg-white">
       <Navigation />
 
       <HeroSection />
