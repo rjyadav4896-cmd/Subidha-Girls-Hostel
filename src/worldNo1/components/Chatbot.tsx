@@ -78,7 +78,7 @@ export default function Chatbot({ phoneDisplay }: { phoneDisplay: string }) {
             <p className="text-xs font-medium text-slate-500">Subidha Girls Hostel support</p>
           </div>
 
-          <div className="flex-1 p-4 space-y-3 overflow-y-auto">
+          <div className="min-h-0 flex-1 space-y-3 overflow-y-auto p-4">
             {messages.map((message, index) => (
               <div key={index} className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}>
                 <div className={`ask-subidha-message max-w-[82%] px-3 py-2 ${

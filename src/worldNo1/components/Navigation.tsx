@@ -28,11 +28,11 @@ export default function Navigation() {
     <nav className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md shadow-sm z-50 border-b border-slate-200/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <button onClick={() => scrollToSection('home')} className="flex-shrink-0 flex items-center">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-sky-500 rounded-xl flex items-center justify-center shadow-sm">
+          <button onClick={() => scrollToSection('home')} className="flex min-w-0 flex-shrink-0 items-center">
+            <div className="flex h-9 w-9 flex-none items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-sky-500 shadow-sm sm:h-10 sm:w-10">
               <span className="text-white font-black text-xl">S</span>
             </div>
-            <span className="ml-2 font-black text-xl text-blue-950">Subidha Girls Hostel</span>
+            <span className="ml-2 truncate text-base font-black text-blue-950 sm:text-xl">Subidha Girls Hostel</span>
           </button>
 
           <div className="hidden lg:flex items-center space-x-1">
@@ -51,7 +51,7 @@ export default function Navigation() {
             Call Now
           </a>
 
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden p-2 rounded-md text-slate-700 hover:bg-slate-100" aria-label="Toggle menu">
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="ml-2 flex-none rounded-md p-2 text-slate-700 hover:bg-slate-100 lg:hidden" aria-label="Toggle menu">
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
