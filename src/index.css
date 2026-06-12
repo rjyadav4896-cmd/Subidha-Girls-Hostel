@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  
+  --color-primary: #1d4ed8; /* Blue */
+  --color-secondary: #0ea5e9; /* Sky blue */
+  --color-accent: #eff6ff; /* Soft blue */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans text-slate-900 bg-white;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
+}
+
+.section-padding {
+  @apply py-20 px-6 md:px-12 lg:px-24;
+}
+
+.ask-subidha-launcher {
+  width: 64px;
+  min-height: 64px;
+  border-radius: 999px;
+  color: #ffffff;
+  background: transparent;
+  transform-origin: 50% 50%;
+  animation: ask-subidha-glow 2.8s ease-in-out infinite;
+}
+
+.ask-subidha-launcher:hover {
+  animation-play-state: paused;
+}
+
+.ask-subidha-launcher.is-open {
+  width: 48px;
+  min-height: 48px;
+  border: 2px solid rgba(14, 165, 233, 0.28);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #1d4ed8, #0ea5e9);
+  box-shadow: 0 14px 30px rgba(29, 78, 216, 0.28);
+  animation: none;
+}
+
+.ask-subidha-bubble {
+  display: block;
+}
+
+.ask-subidha-bubble svg {
+  display: block;
+  width: 64px;
+  height: 64px;
+  overflow: visible;
+  filter: drop-shadow(0 12px 18px rgba(29, 78, 216, 0.28));
+}
+
+.ask-subidha-circle {
+  fill: url("#ask-subidha-blue-gradient");
+}
+
+.ask-subidha-chatmark {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 92;
+  stroke-dashoffset: 92;
+  animation: ask-subidha-mark-draw 0.9s ease-out forwards;
+}
+
+.ask-subidha-circle-text {
+  fill: #ffffff;
+  font-family: var(--font-display);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: lowercase;
+  animation: none;
+  transform: none;
+  pointer-events: none;
+}
+
+.ask-subidha-close {
+  width: 23px;
+  height: 23px;
+  margin: 12px auto;
+  color: #ffffff;
+  stroke-width: 3;
+}
+
+.ask-subidha-window {
+  border: 1px solid rgba(14, 165, 233, 0.28);
+  border-radius: 18px;
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.18);
+  overflow: hidden;
+  background: linear-gradient(180deg, #eff6ff, #e0f2fe);
+  animation: ask-subidha-window-in 0.26s ease-out;
+}
+
+.ask-subidha-header {
+  border-bottom: 1px solid rgba(14, 165, 233, 0.28);
+  background:
+    radial-gradient(circle at 22px 22px, rgba(14, 165, 233, 0.28) 0 9px, transparent 10px),
+    radial-gradient(circle at calc(100% - 30px) 18px, rgba(29, 78, 216, 0.18) 0 12px, transparent 13px),
+    linear-gradient(135deg, #dbeafe, #e0f2fe 54%, #f0f9ff);
+}
+
+.ask-subidha-header h3 {
+  color: #172554;
+}
+
+.ask-subidha-header p {
+  color: #64748b;
+}
+
+.ask-subidha-message {
+  border-radius: 16px;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+}
+
+.ask-subidha-message-bot {
+  border: 1px solid rgba(14, 165, 233, 0.18);
+  background: #f0f9ff;
+}
+
+.ask-subidha-message-user {
+  background: linear-gradient(135deg, #1d4ed8, #0ea5e9);
+  border-color: transparent;
+}
+
+.ask-subidha-quick {
+  border: 1px solid rgba(29, 78, 216, 0.16);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #f0f9ff, #dbeafe);
+  box-shadow: 0 8px 18px rgba(29, 78, 216, 0.08);
+}
+
+.ask-subidha-quick:hover {
+  border-color: rgba(29, 78, 216, 0.28);
+  box-shadow: 0 10px 22px rgba(29, 78, 216, 0.14);
+  color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.ask-subidha-composer {
+  border-top: 1px solid rgba(14, 165, 233, 0.26);
+  background: #dbeafe;
+}
+
+.ask-subidha-input {
+  border: 1px solid rgba(29, 78, 216, 0.22);
+  border-radius: 999px;
+  background: #eff6ff;
+}
+
+.ask-subidha-input:focus {
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.16);
+}
+
+.ask-subidha-send {
+  border-radius: 999px;
+  background: linear-gradient(135deg, #1d4ed8, #0ea5e9);
+  box-shadow: 0 10px 20px rgba(29, 78, 216, 0.22);
+}
+
+@keyframes ask-subidha-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes ask-subidha-mark-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.72);
+    transform-origin: center;
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    transform-origin: center;
+  }
+}
+
+@keyframes ask-subidha-mark-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes ask-subidha-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(14, 165, 233, 0);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(14, 165, 233, 0.12);
+  }
+}
+
+@keyframes ask-subidha-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.45);
+  }
+  78% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes ask-subidha-float {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 0 0 0 rgba(14, 165, 233, 0);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0 0 8px rgba(14, 165, 233, 0.08);
+  }
+}
+
+@keyframes ask-subidha-window-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ask-subidha-launcher,
+  .ask-subidha-chatmark,
+  .ask-subidha-window {
+    animation: none;
+  }
+
+  .ask-subidha-chatmark {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .ask-subidha-launcher {
+    right: 14px;
+    bottom: 14px;
+    width: 58px;
+    min-height: 58px;
+  }
+
+  .ask-subidha-bubble svg {
+    width: 58px;
+    height: 58px;
+  }
+
+  .ask-subidha-window {
+    right: 14px;
+    bottom: 88px;
+    max-height: min(500px, calc(100vh - 130px));
+  }
+}
