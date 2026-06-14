@@ -1,6 +1,5 @@
 import Navigation from './components/Navigation';
 import HeroSection from './components/HeroSection';
-import WhyChooseSection from './components/WhyChooseSection';
 import RoomsSection from './components/RoomsSection';
 import FacilitiesSection from './components/FacilitiesSection';
 import FoodSection from './components/FoodSection';
@@ -21,7 +20,6 @@ export default function HomePage() {
 
       <HeroSection />
 
-      <WhyChooseSection />
       <RoomsSection />
       <FacilitiesSection />
       <FoodSection />
